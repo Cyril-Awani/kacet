@@ -1,15 +1,21 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
+type ForexDataItem = {
+	pair: string;
+	price: number;
+	timestamp: string;
+};
+
 const ForexTable = () => {
-	const [forexData, setForexData] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const [forexData, setForexData] = useState<ForexDataItem[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
+	const [error, setError] = useState<string | null>(null);
 
 	// Fetch data for specific Forex pairs
 	const fetchForexData = async () => {
 		try {
-			const forexPairs = ['EURUSD', 'GBPJPY', 'USDJPY', 'AUDUSD', 'EURGBP']; // Major forex pairs
+			const forexPairs = ['EURUSD', 'GBPJPY', 'USDJPY', 'AUDUSD', 'EURGBP'];
 			const apiKey = '8fab193f78a5425ae6f66e1d'; // Your ExchangeRate-API key
 			const response = await Promise.all(
 				forexPairs.map((pair) =>
@@ -73,7 +79,7 @@ const ForexTable = () => {
 										{data.pair}
 									</td>
 									<td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600'>
-										${parseFloat(data.price).toFixed(4)}
+										${data.price.toFixed(4)}
 									</td>
 									<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
 										{new Date(data.timestamp).toLocaleString()}

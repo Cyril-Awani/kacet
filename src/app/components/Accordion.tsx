@@ -11,7 +11,7 @@ const accordionData: AccordionItem[] = [
 	{
 		title: 'How does this platform work?',
 		content:
-			'This platform enables users to trade cryptocurrency, gift cards, and Deriv funds securely and easily.',
+			'This platform enables users to trade cryptocurrency, gift cards, and Deriv funds securely and easily and directly with Kacet.',
 	},
 	{
 		title: 'What payment methods are available?',
