@@ -13,9 +13,7 @@ import { FaClockRotateLeft, FaXTwitter } from 'react-icons/fa6';
 import { RiSecurePaymentLine } from 'react-icons/ri';
 import { GiReceiveMoney, GiTakeMyMoney } from 'react-icons/gi';
 import Accordion from './components/Accordion';
-import TopGainersLosers from './components/TopGainersLosers';
 import SpecificCoinsTable from './components/SpecificCoinsTable';
-import SpecificForexTable from './components/SpecificForexTable';
 import ForexTable from './components/ForexTable';
 
 export default function Home() {
@@ -130,9 +128,9 @@ export default function Home() {
 							<Image
 								src={src}
 								alt={alt}
-								width={100}
-								height={55}
-								layout='intrinsic'
+								width={100} // Set width directly
+								height={55} // Set height directly
+								priority // Optional, if the image is important
 							/>
 						</div>
 					))}
