@@ -143,7 +143,7 @@ const Tabs = () => {
 			</div>
 
 			{/* Sub Tabs */}
-			<div className=' relative flex border-b mt-4'>
+			<div className=' relative flex pr-10 md:pr-0 border-b mt-4'>
 				{activeTab === 'deriv' &&
 					['deposit', 'withdrawal'].map((subTab) => (
 						<button
