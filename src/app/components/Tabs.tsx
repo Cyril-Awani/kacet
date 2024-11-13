@@ -93,7 +93,7 @@ const Tabs = () => {
 			message = `I want to sell ${inputValue} ${selectedGiftcard} giftcards @ ₦${result.toLocaleString()}.`;
 		}
 
-		const phoneNumber = '+2347075252049';
+		const phoneNumber = '+2348114310177';
 		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
 			message,
 		)}`;
