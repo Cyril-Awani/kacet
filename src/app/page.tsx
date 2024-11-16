@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Nav } from './components/Nav';
 import bitcoin from '@/app/assets/bitcoin.svg';
 import deriv from '@/app/assets/deriv.jpg';
@@ -18,7 +19,13 @@ import Accordion from './components/Accordion';
 import SpecificCoinsTable from './components/SpecificCoinsTable';
 import ForexTable from './components/ForexTable';
 
+
 export default function Home() {
+	const router = useRouter();
+
+	const handleAdminRedirect = () => {
+		router.push('/admin'); // Redirects to the admin page
+	};
 	const paymentImages = [
 		{
 			src: cashapp,
@@ -256,6 +263,7 @@ export default function Home() {
 				<p className='text-gray-400'>
 					&copy; 2024 KacetXchange. All rights reserved.
 				</p>
+				<button onClick={handleAdminRedirect}>Go to Admin Page</button>
 			</footer>
 		</div>
 	);
